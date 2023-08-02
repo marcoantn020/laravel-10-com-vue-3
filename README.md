@@ -36,7 +36,8 @@ rode o projeto frontend
 npm run serve
 ```
 
-### Acesse o projeto: http://localhost:8080
+### Acesse o projeto frontend: http://localhost:8080
+### Acesse o projeto backend: http://localhost:8000/api/v1/status
 
 ##
 ### caso queira ver o endpoints no postman
