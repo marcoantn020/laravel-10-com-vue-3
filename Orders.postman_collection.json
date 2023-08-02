@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "a52aae9d-2d08-45e3-8e18-cf66b011e78a",
+		"name": "Orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9502908"
+	},
+	"item": [
+		{
+			"name": "status",
+			"item": [
+				{
+					"name": "list all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/status",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/status/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"status",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"cancelado\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/status",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "meat",
+			"item": [
+				{
+					"name": "list all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/meat",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"meat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/meat/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"meat",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Veggie burger\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/meat",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"meat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "breads",
+			"item": [
+				{
+					"name": "list all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/breads",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"breads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/breads/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"breads",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Integral\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/breads",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"breads"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "optional",
+			"item": [
+				{
+					"name": "list all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/optional",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"optional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/optional/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"optional",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Pepino\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/optional",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"optional"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "burger",
+			"item": [
+				{
+					"name": "list all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/burgers",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"burgers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all requested",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/burgers/requested",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"burgers",
+								"requested"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all in production",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/burgers/production",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"burgers",
+								"production"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all finished",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/burgers/finished",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"burgers",
+								"finished"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all canceled",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/burgers/canceled",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"burgers",
+								"canceled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n      \"name\": \"Marco cancelado\",\n      \"bread\": \"Parmesão e Orégano\",\n      \"meat\": \"Alcatra\",\n      \"options\": [\n        \"Bacon\",\n        \"Cheddar\",\n        \"Salame\"\n      ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/burgers",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"burgers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ingredients",
+			"item": [
+				{
+					"name": "ingredients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/ingredients",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
