@@ -20,13 +20,6 @@ Instale as dependências do projeto
 composer install
 ```
 
-
-Gere a key do projeto Laravel
-```sh
-php artisan key:generate
-```
-
-
 rode as migracoes
 ```sh
 php artisan migrate
@@ -50,4 +43,4 @@ npm run serve
 - basta importar a collection [Orders.postman_collection.json] que se encontra na raiz do projeto no postman  
 
 # OBS:
-    - EM breve o frontend tambem estara em docker, mas por enquanto é necessario ter o node instalado 
+- EM breve o frontend tambem estara em docker, mas por enquanto é necessario ter o node instalado 
