@@ -6,20 +6,24 @@ use App\Models\Bread;
 use App\Models\Meat;
 use App\Models\Optional;
 use App\Repositories\BaseRepository;
+use App\Repositories\IngredientsRepository;
 
 class ServiceIngredients
 {
-    protected ?BaseRepository $breadRepository = null;
-    protected ?BaseRepository $meatRepository = null;
-    protected ?BaseRepository $optionalRepository = null;
+    protected ?IngredientsRepository $breadRepository = null;
+    protected ?IngredientsRepository $meatRepository = null;
+    protected ?IngredientsRepository $optionalRepository = null;
 
     public function __construct()
     {
-        $this->breadRepository = new BaseRepository(new Bread());
-        $this->meatRepository = new BaseRepository(new Meat());
-        $this->optionalRepository = new BaseRepository(new Optional());
+        $this->breadRepository = new IngredientsRepository(new Bread());
+        $this->meatRepository = new IngredientsRepository(new Meat());
+        $this->optionalRepository = new IngredientsRepository(new Optional());
     }
 
+    /**
+     * @return array
+     */
     public function ingredients(): array
     {
         $bread = $this->breadRepository->all();

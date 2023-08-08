@@ -45,3 +45,14 @@ npm run serve
 
 # OBS:
 - EM breve o frontend tambem estara em docker, mas por enquanto é necessario ter o node instalado 
+
+##
+## Problema de permissão
+
+- Quando for criado novos arquivos, ou quando for a primeira inicialização do container com a aplicação, pode então haver um erro de permissão de acesso as pastas, neste caso, entre dentro do container da aplicação e execute.
+
+```sh
+cd /var/www && \
+chown -R www-data:www-data * && \
+chmod -R o+w app
+```

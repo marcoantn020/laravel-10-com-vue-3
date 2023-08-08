@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Rules\UniqueArray;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateBurgerRequest extends FormRequest
@@ -18,15 +19,14 @@ class CreateBurgerRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'bread' => 'required|string',
-            'meat' => 'required|string',
-            'options' => ['array', new UniqueArray()],
+            'name' => 'required|string|unique:burgers,name',
+            'price' => 'required|numeric|min:0.00',
+            'price_optional' => 'numeric|min:0.00'
         ];
     }
 }

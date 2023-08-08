@@ -5,6 +5,8 @@ use App\Http\Controllers\Api\BurgerController;
 use App\Http\Controllers\Api\IngredientsController;
 use App\Http\Controllers\Api\MeatController;
 use App\Http\Controllers\Api\OptionalController;
+use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\SalesController;
 use App\Http\Controllers\Api\StatusController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -59,16 +61,30 @@ Route::prefix("v1")->group(function () {
             Route::get("/", [BurgerController::class, 'index']);
             Route::post("/", [BurgerController::class, 'store']);
             Route::patch("/{id}", [BurgerController::class, 'update']);
+            Route::get("/search", [BurgerController::class, 'searchBurgerByName']);
+        });
 
-            Route::get("/requested", [BurgerController::class, 'getOrderRequested']);
-            Route::get("/production", [BurgerController::class, 'getOrderInProduction']);
-            Route::get("/finished", [BurgerController::class, 'getOrderFinished']);
-            Route::get("/canceled", [BurgerController::class, 'getOrderCanceled']);
+    Route::prefix("orders")
+        ->group(function () {
+            Route::get("/", [OrderController::class, 'index']);
+            Route::post("/", [OrderController::class, 'store']);
+            Route::patch("/", [OrderController::class, 'update']);
+
+            Route::get("/requested", [OrderController::class, 'getOrderRequested']);
+            Route::get("/production", [OrderController::class, 'getOrderInProduction']);
+            Route::get("/finished", [OrderController::class, 'getOrderFinished']);
+            Route::get("/canceled", [OrderController::class, 'getOrderCanceled']);
         });
 
     Route::prefix("ingredients")
         ->group(function () {
             Route::get("/", [IngredientsController::class, 'index']);
+        });
+
+    Route::prefix("sales")
+        ->group(function () {
+            Route::get("/", [SalesController::class, 'index']);
+            Route::get("/with-burger-name", [SalesController::class, 'getSalesWithNameBurger']);
         });
 
 });

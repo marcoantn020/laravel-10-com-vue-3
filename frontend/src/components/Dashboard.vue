@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     async getOrders() {
-      const req = await fetch(`${this.url}/burgers`)
+      const req = await fetch(`${this.url}/orders/requested`)
       const data = await req.json()
         this.response_burgers = data.data
       await this.getStatus()
@@ -26,9 +26,9 @@ export default {
     },
     async updateStatus(event, id) {
       const statusSelected = event.target.value
-      const dataJson = JSON.stringify({ status_id: statusSelected })
+      const dataJson = JSON.stringify({ status_id: statusSelected, order_id: id })
 
-      await fetch(`${this.url}/burgers/${id}`, {
+      await fetch(`${this.url}/orders`, {
         method: 'PATCH',
         headers: {"Content-Type": "application/json"},
         body: dataJson
@@ -36,6 +36,7 @@ export default {
 
       this.msg = "Pedido alterado."
       setTimeout(() => this.msg = "", 3000)
+      await this.getOrders()
     },
 
   },
@@ -63,7 +64,7 @@ export default {
     <div id="burger-table-rows">
       <div class="burger-table-row" v-for="burger in response_burgers" :key="burger.id">
         <div class="order-number"> {{ burger.id }}</div>
-        <div> {{ burger.name }} </div>
+        <div> {{ burger.name_client }} </div>
         <div> {{ burger.bread }} </div>
         <div> {{ burger.meat }} </div>
         <div>

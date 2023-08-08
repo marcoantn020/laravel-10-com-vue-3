@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/report-traditional', [\App\Http\Controllers\EmailController::class, 'reportTraditional']);
+Route::get('/report-artesanal', [\App\Http\Controllers\EmailController::class, 'reportArtesanal']);

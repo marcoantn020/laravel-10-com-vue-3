@@ -28,14 +28,15 @@ export default {
     async createHamburger(e) {
       e.preventDefault()
       const data = {
-        name: this.request_name,
+        name_client: this.request_name,
         bread: this.request_bread,
         meat: this.request_meat,
+        burger_id: 2,
         options: Array.from(this.request_options)
       }
       const dataJson = JSON.stringify(data)
 
-      const req = await fetch(`${this.url}/burgers`, {
+      const req = await fetch(`${this.url}/orders`, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: dataJson

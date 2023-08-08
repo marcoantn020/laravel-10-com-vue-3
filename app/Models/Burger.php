@@ -12,16 +12,8 @@ class Burger extends Model
 
     protected $table = 'burgers';
 
-    protected $fillable = ['name', 'bread', 'meat', 'options', 'status_id'];
+    protected $fillable = ['name', 'price', 'price_optional'];
 
-    protected $casts = [
-        'options' => 'json',
-    ];
-
-    public function status()
-    {
-        return $this->belongsTo(Status::class);
-    }
 }
 
 

@@ -4,31 +4,53 @@ namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Repository Base With methods [all, find, create, update, delete]
+ */
 class BaseRepository
 {
-    protected $model;
+    protected Model $model;
 
+    /**
+     * @param Model $model
+     */
     public function __construct(Model $model)
     {
         $this->model = $model;
     }
 
-    public function all()
+    /**
+     * @return mixed
+     */
+    public function all(): mixed
     {
-        return $this->model->all();
+        return $this->model->paginate(10);
     }
 
-    public function find($id)
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function find($id): mixed
     {
         return $this->model->find($id);
     }
 
-    public function create(array $data)
+    /**
+     * @param array $data
+     * @return mixed
+     */
+    public function create(array $data): mixed
     {
         return $this->model->create($data);
     }
 
-    public function update($id, array $data)
+    /**
+     * @param $id
+     * @param array $data
+     * @return mixed|null
+     */
+    public function update($id, array $data): mixed
     {
         $record = $this->find($id);
         if ($record) {
@@ -38,7 +60,11 @@ class BaseRepository
         return null;
     }
 
-    public function delete($id)
+    /**
+     * @param $id
+     * @return false
+     */
+    public function delete($id): bool
     {
         $record = $this->find($id);
         if ($record) {
